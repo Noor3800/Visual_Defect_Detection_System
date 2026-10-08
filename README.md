@@ -415,6 +415,9 @@ The confusion matrix is saved to:
 ```text
 results/confusion_matrix.png
 ```
+## Confusion Matrix
+
+![Confusion Matrix](results/confusion_matrix.png)
 
 Detailed metrics are saved to:
 
@@ -422,7 +425,12 @@ Detailed metrics are saved to:
 results/evaluation_metrics.json
 ```
 
+## Metrics
+
+![Metrics](results/evaluation_metrics.json)
+
 ---
+
 
 ## 10. Error Analysis
 
@@ -559,7 +567,11 @@ The interface allows the user to:
 
 The frontend uses simple HTML, CSS, and JavaScript and is served directly by FastAPI.
 
-No separate frontend server is required.
+### Web Interface
+
+![Web Interface](results/web_interface.png)
+
+![Web Interface](results/Test-img.png)
 
 ---
 
