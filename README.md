@@ -417,7 +417,7 @@ results/confusion_matrix.png
 ```
 ## Confusion Matrix
 
-![Confusion Matrix](results/confusion_matrix.png)
+![Confusion Matrix](Visual_Defect_Detection_System/results/confusion_matrix.png)
 
 Detailed metrics are saved to:
 
@@ -427,7 +427,7 @@ results/evaluation_metrics.json
 
 ## Metrics
 
-![Metrics](results/evaluation_metrics.json)
+![Metrics](Visual_Defect_Detection_System/results/evaluation_metrics.json)
 
 ---
 
@@ -569,9 +569,9 @@ The frontend uses simple HTML, CSS, and JavaScript and is served directly by Fas
 
 ### Web Interface
 
-![Web Interface](results/web_interface.png)
+![Web Interface](Visual_Defect_Detection_System/results/web_interface.png)
 
-![Web Interface](results/Test-img.png)
+![Web Interface](Visual_Defect_Detection_System/results/Test-img.png)
 
 ---
 
