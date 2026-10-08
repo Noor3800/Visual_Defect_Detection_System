@@ -425,12 +425,6 @@ Detailed metrics are saved to:
 results/evaluation_metrics.json
 ```
 
-## Metrics
-
-![Metrics](results/evaluation_metrics.json)
-
----
-
 
 ## 10. Error Analysis
 
