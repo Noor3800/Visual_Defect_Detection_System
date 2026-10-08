@@ -652,49 +652,67 @@ Docker is included to demonstrate deployment packaging.
 
 ## 16. Architecture Diagram
 
+## Architecture
+
+The system follows an end-to-end computer vision inference pipeline. A product image is uploaded through the web interface and sent to the FastAPI backend. The image is validated and preprocessed before being passed to the EfficientNet-B0 model. The model predicts whether the product is normal or defective and returns the prediction confidence and inference time.
+
 ```text
-                    +----------------------+
-                    |    Product Image     |
-                    +----------+-----------+
-                               |
-                               v
-                    +----------------------+
-                    |     FastAPI API      |
-                    |  Image Validation    |
-                    +----------+-----------+
-                               |
-                               v
-                    +----------------------+
-                    | Image Preprocessing  |
-                    | Resize: 224 x 224    |
-                    | ImageNet Normalize   |
-                    +----------+-----------+
-                               |
-                               v
-                    +----------------------+
-                    |    EfficientNet-B0   |
-                    |   Transfer Learning  |
-                    +----------+-----------+
-                               |
-                               v
-                    +----------------------+
-                    |    Classification    |
-                    +----------+-----------+
-                               |
-                    +----------+-----------+
-                    |                      |
-                    v                      v
-             +-------------+       +-------------+
-             |    Normal   |       |  Defective  |
-             +-------------+       +-------------+
-                    |                      |
-                    +----------+-----------+
-                               |
-                               v
-                    +----------------------+
-                    | Prediction +         |
-                    | Confidence + Latency |
-                    +----------------------+
+                    ┌──────────────────────┐
+                    │    Product Image     │
+                    │   (Uploaded Image)   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │    FastAPI API       │
+                    │  Image Validation   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │  Image Preprocessing │
+                    │                      │
+                    │ • Resize 224 × 224  │
+                    │ • RGB Conversion    │
+                    │ • ImageNet Normalize│
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │    EfficientNet-B0   │
+                    │   Transfer Learning  │
+                    │                      │
+                    │  ImageNet Weights    │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │    Classification    │
+                    │                      │
+                    │  2 Output Classes    │
+                    └──────────┬───────────┘
+                               │
+                     ┌─────────┴─────────┐
+                     ▼                   ▼
+              ┌─────────────┐     ┌─────────────┐
+              │   NORMAL    │     │  DEFECTIVE  │
+              └─────────────┘     └─────────────┘
+                     │                   │
+                     └─────────┬─────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │ Prediction Response  │
+                    │                      │
+                    │ • Class              │
+                    │ • Confidence         │
+                    │ • Inference Time     │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Web Interface      │
+                    │  HTML + CSS + JS     │
+                    └──────────────────────┘
 ```
 
 ---
