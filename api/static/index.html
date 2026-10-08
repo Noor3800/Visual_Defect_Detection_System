@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visual Defect Detection</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Visual Defect Detection</h1>
+            <p>Manufacturing Quality Inspection System</p>
+        </header>
+
+
+        <main>
+
+            <div class="upload-card">
+
+                <h2>Upload Product Image</h2>
+
+                <div class="upload-area" id="uploadArea">
+
+                    <div id="placeholder">
+
+                        <div class="upload-icon">📷</div>
+
+                        <p>Choose a product image</p>
+
+                        <span>
+                            JPG, PNG or WEBP
+                        </span>
+
+                    </div>
+
+                    <img
+                        id="preview"
+                        src=""
+                        alt="Image preview"
+                    >
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                >
+
+                <button
+                    class="choose-btn"
+                    id="chooseBtn"
+                >
+                    Choose Image
+                </button>
+
+
+                <button
+                    class="detect-btn"
+                    id="detectBtn"
+                    disabled
+                >
+                    Detect Defect
+                </button>
+
+
+                <div
+                    class="loading"
+                    id="loading"
+                >
+                    Analyzing image...
+                </div>
+
+
+                <div
+                    class="result"
+                    id="result"
+                >
+
+                    <h2 id="prediction">
+                        -
+                    </h2>
+
+                    <p>
+                        Confidence:
+                        <strong id="confidence">-</strong>
+                    </p>
+
+                    <p>
+                        Inference Time:
+                        <strong id="time">-</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <footer>
+            <p>
+                AI-powered visual inspection • EfficientNet-B0
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

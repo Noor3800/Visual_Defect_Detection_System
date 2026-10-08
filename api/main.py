@@ -1,3 +1,6 @@
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
 from io import BytesIO
 from pathlib import Path
 import logging
@@ -41,6 +44,21 @@ app = FastAPI(
         "for Normal vs Defective detection."
     ),
 )
+
+STATIC_DIR = PROJECT_ROOT / "api" / "static"
+
+app.mount(
+    "/static",
+    StaticFiles(directory=STATIC_DIR),
+    name="static",
+)
+
+
+@app.get("/", include_in_schema=False)
+def home():
+    return FileResponse(
+        STATIC_DIR / "index.html"
+    )
 
 
 # Device

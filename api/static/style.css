@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #6b7280;
+    font-size: 17px;
+}
+
+.upload-card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.upload-card h2 {
+    margin-bottom: 25px;
+}
+
+.upload-area {
+    width: 100%;
+    height: 300px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+#placeholder {
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+#placeholder p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#placeholder span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+#preview {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 13px 25px;
+    margin-top: 20px;
+}
+
+.choose-btn {
+    background: #e5e7eb;
+    color: #111827;
+    margin-right: 10px;
+}
+
+.choose-btn:hover {
+    background: #d1d5db;
+}
+
+.detect-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.detect-btn:hover {
+    background: #1d4ed8;
+}
+
+.detect-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.loading {
+    display: none;
+    margin-top: 25px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.result {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.result h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.result p {
+    margin: 8px;
+    color: #475569;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .upload-card {
+        padding: 20px;
+    }
+
+    .choose-btn,
+    .detect-btn {
+        width: 100%;
+        margin-right: 0;
+    }
+}
